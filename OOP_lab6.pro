@@ -25,12 +25,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        Equilateral_triangle.cpp \
+        Isosceles_triangle.cpp \
         PaintTable.cpp \
+        Point.cpp \
+        Triangle.cpp \
         main.cpp \
         mainwindow.cpp
 
 HEADERS += \
+        Equilateral_triangle.h \
+        Isosceles_triangle.h \
         PaintTable.h \
+        Point.h \
+        Triangle.h \
         mainwindow.h
 
 FORMS += \
