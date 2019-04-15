@@ -30,6 +30,12 @@ private slots:
   //  void lineEdit_Area(double);
   //  void lineEdit_Perimeter(double);
 
+    void on_radioButton_Isosceles_clicked();
+
+    void on_radioButton_Arbitrary_clicked();
+
+    void on_radioButton_Equilateral_clicked();
+
 private:
     Ui::MainWindow *ui;
     PaintTable * desk;

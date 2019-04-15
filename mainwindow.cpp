@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
     desk = new PaintTable(this);
 
     this->setFixedSize(490, 420);
-    desk->setGeometry(0,90,490,310);
+    desk->setGeometry(0,100,490,310);
 
 
 
@@ -72,4 +72,19 @@ void MainWindow::clear()
     double triangleParamsMas[3] = {0,0,0};
     desk->setParams(triangleParamsMas);
     desk->repaint();
+}
+
+void MainWindow::on_radioButton_Isosceles_clicked()
+{
+    desk->setTriangleType(0);
+}
+
+void MainWindow::on_radioButton_Arbitrary_clicked()
+{
+    desk->setTriangleType(1);
+}
+
+void MainWindow::on_radioButton_Equilateral_clicked()
+{
+    desk->setTriangleType(2);
 }

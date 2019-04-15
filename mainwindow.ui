@@ -23,8 +23,8 @@
    <widget class="QPushButton" name="PushButton">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>10</y>
+      <x>230</x>
+      <y>40</y>
       <width>101</width>
       <height>24</height>
      </rect>
@@ -163,8 +163,8 @@
    <widget class="QPushButton" name="PushButtonClear">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>50</y>
+      <x>240</x>
+      <y>70</y>
       <width>80</width>
       <height>24</height>
      </rect>
@@ -176,15 +176,69 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>40</y>
-      <width>120</width>
-      <height>111</height>
+      <x>350</x>
+      <y>0</y>
+      <width>131</width>
+      <height>101</height>
      </rect>
     </property>
     <property name="title">
      <string>Triangle`s type</string>
     </property>
+    <widget class="QRadioButton" name="radioButton_Arbitrary">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>111</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Arbitrary</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_Isosceles">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>111</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Isosceles</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_Equilateral">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>111</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Equilateral</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

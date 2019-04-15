@@ -17,12 +17,14 @@ class PaintTable : public QWidget
     QPainter painter;
     double triangleParamsMas[3];
     double AreaPerimeter[2];
+    int    triangleType;
 
 public:
 
     PaintTable(QWidget*);
     void setParams(double[]);
     void getAreaPerimeter(double*);
+    void setTriangleType(int);
 protected:
 
     void paintEvent(QPaintEvent*);

@@ -1,9 +1,16 @@
 #include "PaintTable.h"
-#include "Triangle.h"
+#include "Equilateral_triangle.h"
 PaintTable::PaintTable(QWidget* w) : QWidget(w)
 {
     double triangleParamsMas[3] = {0,0,0};
     double AreaPerimeter[2] = {0,0};
+    int triangleType = 0;
+}
+
+void PaintTable::setTriangleType(int type)
+{
+    triangleType = type;
+    if (type < 0 || type > 2) triangleType = 0;
 }
 
 void PaintTable::setParams(double Mas[])
@@ -30,7 +37,7 @@ void PaintTable::paintEvent(QPaintEvent*)
      painter.setPen(pen);
 
 
-    painter.drawRect(5, 30, 480, 270);
+    painter.drawRect(5, 30, 480, 260);
     painter.setPen(Qt::white);
 
     double position = 200;
@@ -46,13 +53,34 @@ void PaintTable::paintEvent(QPaintEvent*)
     if (temp1 == 0 || temp2 == 0 || temp3 == 0)
     {
     //painter.drawLine(QPoint(position, position),QPoint(position, position));
-
+        AreaPerimeter[0] = 0;
+        AreaPerimeter[1] = 0;
     }
 
     else
 
     {
-        triangle1 = new Triangle(temp1,temp2,temp3);
+        switch (triangleType)
+        {
+         case 0:
+
+            triangle1 = new Triangle(temp1,temp2,temp3);
+            break;
+
+         case 1:
+
+            triangle1 = new Isosceles_triangle(temp1,temp3);
+            break;
+
+         case 2:
+
+            triangle1 = new Equilateral_triangle(temp1);
+            break;
+        }
+
+
+
+
         AreaPerimeter[0] = triangle1->Area();
         AreaPerimeter[1] = triangle1->Perimeter();
 
