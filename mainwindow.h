@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "PaintTable.h"
+#include "Tlineedit.h"
 
 
 namespace Ui {
@@ -12,6 +13,7 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+    TLineEdit* editSide1;
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);

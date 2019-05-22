@@ -15,6 +15,16 @@ MainWindow::MainWindow(QWidget *parent) :
 
     setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
     ui->setupUi(this);
+
+   // editSide1 = new TLineEdit("side1",this);
+   // editSide1->setGeometry(ui->lineEdit_side1->x(),ui->lineEdit_side1->y()+14,ui->lineEdit_side1->width(),ui->lineEdit_side1->height());
+
+   // editSide1 = new TLineEdit("side2",this);
+   // editSide1->setGeometry(ui->lineEdit_side1->x(),ui->lineEdit_side1->y()+14,ui->lineEdit_side1->width(),ui->lineEdit_side1->height());
+
+   // editSide1 = new TLineEdit("angle12",this);
+   // editSide1->setGeometry(ui->lineEdit_side1->x(),ui->lineEdit_side1->y()+14,ui->lineEdit_side1->width(),ui->lineEdit_side1->height());
+
     connect(ui->PushButton, SIGNAL(clicked()), this, SLOT(readParams()));
     connect(ui->PushButtonClear, SIGNAL(clicked()), this, SLOT(clear()));
 
@@ -57,6 +67,7 @@ void MainWindow::readParams()
     QString Perimeter = QString::number(masInfo[1]);
     ui->lineEdit_Area->setText(Area);
     ui->lineEdit_Perimeter->setText(Perimeter);
+    delete[] masInfo;
 
 
 
@@ -74,15 +85,19 @@ void MainWindow::clear()
     desk->repaint();
 }
 
-void MainWindow::on_radioButton_Isosceles_clicked()
+
+
+void MainWindow::on_radioButton_Arbitrary_clicked()
 {
     desk->setTriangleType(0);
 }
 
-void MainWindow::on_radioButton_Arbitrary_clicked()
+void MainWindow::on_radioButton_Isosceles_clicked()
 {
     desk->setTriangleType(1);
 }
+
+
 
 void MainWindow::on_radioButton_Equilateral_clicked()
 {

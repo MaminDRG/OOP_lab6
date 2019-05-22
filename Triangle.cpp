@@ -59,8 +59,8 @@ double Triangle::side3Find()
     double Cy = y2+By;
     double Cx = Bx - (gamma-betta*(By-Cy))/alpha;
 
-    /////
-    if ( betta == 0)
+    //betta = 0 ?
+    if (std::fabs(betta) < std::numeric_limits<double>::epsilon())
     {
         Cx = Bx - gamma/alpha;
     }

@@ -29,6 +29,7 @@ SOURCES += \
         Isosceles_triangle.cpp \
         PaintTable.cpp \
         Point.cpp \
+        Tlineedit.cpp \
         Triangle.cpp \
         main.cpp \
         mainwindow.cpp
@@ -38,6 +39,7 @@ HEADERS += \
         Isosceles_triangle.h \
         PaintTable.h \
         Point.h \
+        Tlineedit.h \
         Triangle.h \
         mainwindow.h
 

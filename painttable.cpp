@@ -50,7 +50,7 @@ void PaintTable::paintEvent(QPaintEvent*)
     double temp1 = triangleParamsMas[0];
     double temp2 = triangleParamsMas[1];
     double temp3 = triangleParamsMas[2];
-    if (temp1 == 0 || temp2 == 0 || temp3 == 0)
+    if (temp1 == 0.0 || temp2 == 0.0 || temp3 == 0.0)
     {
     //painter.drawLine(QPoint(position, position),QPoint(position, position));
         AreaPerimeter[0] = 0;
@@ -113,6 +113,11 @@ void PaintTable::paintEvent(QPaintEvent*)
    painter.drawLine(QPoint(position - 10*Bx ,position - 10*By),QPoint(position - 10*Cx,position - 10*Cy));
    painter.drawLine(QPoint(position - 10*Cx ,position - 10*Cy),QPoint(position - 10*Ax,position - 10*Ay));
 
+   delete[] infoPointA;
+   delete[] infoPointB;
+   delete[] infoPointC;
+   delete triangleParams;
     }
+    delete triangle1;
     painter.end();
 }
